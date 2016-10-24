@@ -15,7 +15,7 @@ namespace AccessVersionChecker.Controller
   /// </summary>
   public class MainFormController
   {
-    private const string ComptabilityReportName = "Access databases comptability report";
+    private const string CompatibilityReportName = "Access databases compatibility report";
 
     private readonly ModelFacade _facade = new ModelFacade();
     private readonly IMainFormView _view;
@@ -26,13 +26,13 @@ namespace AccessVersionChecker.Controller
       _view = view;
       _taskContainer = taskContainer;
 
-      _view.ComptabilityVersions = new List<int>
+      _view.CompatibilityVersions = new List<int>
       {
         2016
       };
 
-      // By default sort the grid by comptability
-      view.SortOnComptability();
+      // By default sort the grid by compatibility
+      view.SortOnCompatibility();
     }
 
     public void AddDatabases(IEnumerable<string> accessDbFileNames)
@@ -67,7 +67,7 @@ namespace AccessVersionChecker.Controller
         "Owner",
         "Version",
         "File format",
-        "Comptability",
+        "Compatibility",
         "Created",
         "Last Modified",
         "Path"
@@ -91,7 +91,7 @@ namespace AccessVersionChecker.Controller
         table.Add(rowAsText);
       }
 
-      _facade.ExportToExcel(ComptabilityReportName, table, excelFilePath);
+      _facade.ExportToExcel(CompatibilityReportName, table, excelFilePath);
     }
 
     public static void OpenLink(string filePath)

@@ -41,9 +41,9 @@ namespace AccessVersionChecker.Controller.Task
       _worker.RunWorkerCompleted += Task_ProgressCompleted;
       _taskProgress = new SimpleBackgroundWorker(_worker);
 
-      var comptabilityVersion = _view.ComptabilityVersion;
+      var compatibilityVersion = _view.CompatibilityVersion;
       _view.DisableInput();
-      _worker.RunWorkerAsync(comptabilityVersion);
+      _worker.RunWorkerAsync(compatibilityVersion);
     }
 
     public void Cancel()
@@ -53,12 +53,12 @@ namespace AccessVersionChecker.Controller.Task
 
     private void Task_Run(object sender, DoWorkEventArgs e)
     {
-      int comptabilityVersion = int.Parse(e.Argument + "");
+      int compatibilityVersion = int.Parse(e.Argument + "");
       var allAccessFileInfo = _facade.ReadFromTextFile(_filePath, _taskProgress);
 
       foreach (var db in allAccessFileInfo)
       {
-        db.CompatibleValue = _facade.IsCompatible(db.FileFormatValue, comptabilityVersion);
+        db.CompatibleValue = _facade.IsCompatible(db.FileFormatValue, compatibilityVersion);
       }
 
       if (_taskProgress.CancelRequested())
@@ -99,7 +99,7 @@ namespace AccessVersionChecker.Controller.Task
         }
       }
 
-      _view.SortOnComptability();
+      _view.SortOnCompatibility();
       _view.RowDataChanged();
       _view.ProgressChanged(0);
       _view.EnableInput();

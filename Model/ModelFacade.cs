@@ -93,14 +93,14 @@ namespace AccessVersionChecker.Model
     }
 
     /// <summary>
-    ///   Check if the given fileFormat is compatible with the given comptability version number.
+    ///   Check if the given fileFormat is compatible with the given compatibility version number.
     /// </summary>
     /// <param name="fileFormat">An access file format</param>
-    /// <param name="comptabilityVersion">The access version number to check against (default = Access 2016)</param>
+    /// <param name="compatibilityVersion">The access version number to check against (default = Access 2016)</param>
     /// <returns></returns>
-    public bool IsCompatible(AccessFileFormat fileFormat, int comptabilityVersion = 2016)
+    public bool IsCompatible(AccessFileFormat fileFormat, int compatibilityVersion = 2016)
     {
-      if (comptabilityVersion == 2016)
+      if (compatibilityVersion == 2016)
         return
           (fileFormat != AccessFileFormat.Acc2) &&
           (fileFormat != AccessFileFormat.Acc95) &&

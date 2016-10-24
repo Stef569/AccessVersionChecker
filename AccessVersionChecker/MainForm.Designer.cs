@@ -31,13 +31,13 @@
       this.OwnerColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.VersionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.AccessVersionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ComptabilityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.CompatibilityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CreatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.LastModifiedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.DbPathColumn = new System.Windows.Forms.DataGridViewLinkColumn();
       this.HeaderLabel = new System.Windows.Forms.Label();
-      this.VersionComptabilityLabel = new System.Windows.Forms.Label();
-      this.ComptabilityVersionComboBox = new System.Windows.Forms.ComboBox();
+      this.VersioncCompatibilityLabel = new System.Windows.Forms.Label();
+      this.CompatibilityVersionComboBox = new System.Windows.Forms.ComboBox();
       this.ClearGridButton = new System.Windows.Forms.Button();
       this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.TaskProgressBar = new System.Windows.Forms.ProgressBar();
@@ -84,7 +84,7 @@
             this.OwnerColumn,
             this.VersionColumn,
             this.AccessVersionColumn,
-            this.ComptabilityColumn,
+            this.CompatibilityColumn,
             this.CreatedColumn,
             this.LastModifiedColumn,
             this.DbPathColumn});
@@ -129,14 +129,14 @@
       this.AccessVersionColumn.ReadOnly = true;
       this.AccessVersionColumn.Width = 85;
       // 
-      // ComptabilityColumn
+      // CompatibilityColumn
       // 
-      this.ComptabilityColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ComptabilityColumn.DataPropertyName = "Compatible";
-      this.ComptabilityColumn.HeaderText = "Comptability";
-      this.ComptabilityColumn.Name = "ComptabilityColumn";
-      this.ComptabilityColumn.ReadOnly = true;
-      this.ComptabilityColumn.Width = 88;
+      this.CompatibilityColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.CompatibilityColumn.DataPropertyName = "Compatible";
+      this.CompatibilityColumn.HeaderText = "Compatibility";
+      this.CompatibilityColumn.Name = "CompatibilityColumn";
+      this.CompatibilityColumn.ReadOnly = true;
+      this.CompatibilityColumn.Width = 88;
       // 
       // CreatedColumn
       // 
@@ -175,23 +175,23 @@
       this.HeaderLabel.Text = "This tool allows to check the version and compatibility of a list of access datab" +
     "ases. If the database is not compatible the file will not open!";
       // 
-      // VersionComptabilityLabel
+      // VersioncCompatibilityLabel
       // 
-      this.VersionComptabilityLabel.AutoSize = true;
-      this.VersionComptabilityLabel.Location = new System.Drawing.Point(12, 57);
-      this.VersionComptabilityLabel.Name = "VersionComptabilityLabel";
-      this.VersionComptabilityLabel.Size = new System.Drawing.Size(136, 13);
-      this.VersionComptabilityLabel.TabIndex = 4;
-      this.VersionComptabilityLabel.Text = "Version comptability check:";
+      this.VersioncCompatibilityLabel.AutoSize = true;
+      this.VersioncCompatibilityLabel.Location = new System.Drawing.Point(12, 57);
+      this.VersioncCompatibilityLabel.Name = "VersioncCompatibilityLabel";
+      this.VersioncCompatibilityLabel.Size = new System.Drawing.Size(136, 13);
+      this.VersioncCompatibilityLabel.TabIndex = 4;
+      this.VersioncCompatibilityLabel.Text = "Version compatibility check:";
       // 
-      // ComptabilityVersionComboBox
+      // CompatibilityVersionComboBox
       // 
-      this.ComptabilityVersionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.ComptabilityVersionComboBox.FormattingEnabled = true;
-      this.ComptabilityVersionComboBox.Location = new System.Drawing.Point(154, 54);
-      this.ComptabilityVersionComboBox.Name = "ComptabilityVersionComboBox";
-      this.ComptabilityVersionComboBox.Size = new System.Drawing.Size(73, 21);
-      this.ComptabilityVersionComboBox.TabIndex = 5;
+      this.CompatibilityVersionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.CompatibilityVersionComboBox.FormattingEnabled = true;
+      this.CompatibilityVersionComboBox.Location = new System.Drawing.Point(154, 54);
+      this.CompatibilityVersionComboBox.Name = "CompatibilityVersionComboBox";
+      this.CompatibilityVersionComboBox.Size = new System.Drawing.Size(73, 21);
+      this.CompatibilityVersionComboBox.TabIndex = 5;
       // 
       // ClearGridButton
       // 
@@ -272,8 +272,8 @@
       this.Controls.Add(this.CancelTaskButton);
       this.Controls.Add(this.TaskProgressBar);
       this.Controls.Add(this.ClearGridButton);
-      this.Controls.Add(this.ComptabilityVersionComboBox);
-      this.Controls.Add(this.VersionComptabilityLabel);
+      this.Controls.Add(this.CompatibilityVersionComboBox);
+      this.Controls.Add(this.VersioncCompatibilityLabel);
       this.Controls.Add(this.HeaderLabel);
       this.Controls.Add(this.DatabasesGridView);
       this.Controls.Add(this.AddDatabaseButton);
@@ -298,14 +298,14 @@
     private System.Windows.Forms.Button AddDatabaseButton;
     private System.Windows.Forms.DataGridView DatabasesGridView;
     private System.Windows.Forms.Label HeaderLabel;
-    private System.Windows.Forms.Label VersionComptabilityLabel;
-    private System.Windows.Forms.ComboBox ComptabilityVersionComboBox;
+    private System.Windows.Forms.Label VersioncCompatibilityLabel;
+    private System.Windows.Forms.ComboBox CompatibilityVersionComboBox;
     private System.Windows.Forms.Button ClearGridButton;
     private System.Windows.Forms.DataGridViewTextBoxColumn DbNameColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn OwnerColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn VersionColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn AccessVersionColumn;
-    private System.Windows.Forms.DataGridViewTextBoxColumn ComptabilityColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn CompatibilityColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn CreatedColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn LastModifiedColumn;
     private System.Windows.Forms.DataGridViewLinkColumn DbPathColumn;

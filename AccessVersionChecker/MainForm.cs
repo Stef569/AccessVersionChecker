@@ -53,9 +53,9 @@ namespace AccessVersionChecker
 
     #region VIEW
 
-    public void SortOnComptability()
+    public void SortOnCompatibility()
     {
-      var column = UiUtil.GetColumnByName(DatabasesGridView, "ComptabilityColumn");
+      var column = UiUtil.GetColumnByName(DatabasesGridView, "CompatibilityColumn");
       DatabasesGridView.Sort(column, ListSortDirection.Ascending);
     }
 
@@ -64,9 +64,9 @@ namespace AccessVersionChecker
       BindingSource.Add(info);
     }
 
-    public List<int> ComptabilityVersions
+    public List<int> CompatibilityVersions
     {
-      set { ComptabilityVersionComboBox.DataSource = value; }
+      set { CompatibilityVersionComboBox.DataSource = value; }
     }
 
     public void ClearRows()
@@ -98,7 +98,7 @@ namespace AccessVersionChecker
     {
       AddDatabaseButton.Enabled = enableInput;
       ClearGridButton.Enabled = enableInput;
-      ComptabilityVersionComboBox.Enabled = enableInput;
+      CompatibilityVersionComboBox.Enabled = enableInput;
       fileToolStripMenuItem.Enabled = enableInput;
       DatabasesGridView.Enabled = enableInput;
     }
@@ -108,12 +108,12 @@ namespace AccessVersionChecker
       get { return BindingSource.List.Cast<AccessFileInfo>().ToList(); }
     }
 
-    public int ComptabilityVersion
+    public int CompatibilityVersion
     {
       get
       {
-        // Get the comptability version from the cbo
-        var cbo = ComptabilityVersionComboBox;
+        // Get the compatibility version from the cbo
+        var cbo = CompatibilityVersionComboBox;
         if (cbo.SelectedIndex == -1) return -1;
         return int.Parse(cbo.Items[cbo.SelectedIndex] + "");
       }
@@ -155,7 +155,7 @@ namespace AccessVersionChecker
     private void exportToExcelMenuItem_Click(object sender, EventArgs e)
     {
       // Prompt for a path to save the CSV file to
-      var fileName = UiUtil.SaveFileDialog("Access databases comptability report", "csv", @"*.csv|Excel", this);
+      var fileName = UiUtil.SaveFileDialog("Access databases compatibility report", "csv", @"*.csv|Excel", this);
 
       _controller.ExportToExcel(fileName);
     }

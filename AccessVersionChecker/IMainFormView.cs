@@ -9,13 +9,13 @@ namespace AccessVersionChecker
 {
   public interface IMainFormView
   {
-    List<int> ComptabilityVersions { set; }
+    List<int> CompatibilityVersions { set; }
 
-    int ComptabilityVersion { get; }
+    int CompatibilityVersion { get; }
 
     List<AccessFileInfo> Rows { get; }
 
-    void SortOnComptability();
+    void SortOnCompatibility();
 
     void Add(AccessFileInfo info);
 
